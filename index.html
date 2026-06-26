@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1><svg width="64px" height="64px" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000" transform="matrix(1, 0, 0, 1, 0, 0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M512 512m-277.333333 0a277.333333 277.333333 0 1 0 554.666666 0 277.333333 277.333333 0 1 0-554.666666 0Z" fill="#ff9500"></path><path d="M85.333333 533.333333H42.666667a21.333333 21.333333 0 1 1 0-42.666666h42.666666a21.333333 21.333333 0 1 1 0 42.666666zM209.066667 230.4a21.269333 21.269333 0 0 1-15.082667-6.250667l-29.866667-29.866666a21.333333 21.333333 0 1 1 30.165334-30.165334l29.866666 29.866667A21.333333 21.333333 0 0 1 209.066667 230.4zM512 106.666667a21.333333 21.333333 0 0 1-21.333333-21.333334V42.666667a21.333333 21.333333 0 1 1 42.666666 0v42.666666a21.333333 21.333333 0 0 1-21.333333 21.333334zM814.933333 230.4a21.333333 21.333333 0 0 1-15.082666-36.416l29.866666-29.866667a21.333333 21.333333 0 1 1 30.165334 30.165334l-29.866667 29.866666a21.269333 21.269333 0 0 1-15.082667 6.250667zM981.333333 533.333333h-42.666666a21.333333 21.333333 0 1 1 0-42.666666h42.666666a21.333333 21.333333 0 1 1 0 42.666666z" fill="#ff9500"></path><path d="M810.666667 1002.666667H213.333333c-105.856 0-192-86.122667-192-192s86.144-192 192-192c17.322667 0 34.624 2.453333 51.669334 7.338666A256.128 256.128 0 0 1 490.666667 490.666667a255.786667 255.786667 0 0 1 232.533333 149.290666A189.653333 189.653333 0 0 1 810.666667 618.666667c105.856 0 192 86.122667 192 192s-86.144 192-192 192z" fill="#c1e0e2"></path></g></svg> <span>Weather</span></h1>
+        <form class="user-input">
+            <input type="text" id="location">
+            <button id="search"><svg width="15px" height="15px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M15.7955 15.8111L21 21M18 10.5C18 14.6421 14.6421 18 10.5 18C6.35786 18 3 14.6421 3 10.5C3 6.35786 6.35786 3 10.5 3C14.6421 3 18 6.35786 18 10.5Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></button>
+        </form>
+    </header>
+
+    <main>
+        <section class="top-part">
+            <section class="result">
+                <p id="location-name"><svg width="22px" height="22px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12 21C15.5 17.4 19 14.1764 19 10.2C19 6.22355 15.866 3 12 3C8.13401 3 5 6.22355 5 10.2C5 14.1764 8.5 17.4 12 21Z" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg> <span id="city-name"></span></p>
+                <p id="location-time"></p>
+                <p id="location-temperature"></p>
+                <p id="location-weather"></p>
+            </section>
+            <section class="high-and-low-temp">
+                <p id="high-temp">High <svg width="22px" height="22px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12 5V19M12 5L6 11M12 5L18 11" stroke="#ff471a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg> <span id="high-temperature"></span></p>
+                <p id="low-temp">Low <svg width="22px" height="22px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" transform="rotate(0)matrix(1, 0, 0, -1, 0, 0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12 5V19M12 5L6 11M12 5L18 11" stroke="#6dd5f8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg> <span id="low-temperature"></span></p>
+                <p id="wind-speed">Wind <svg width="18px" height="18px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M3 8H5M7 5.85714V5.5C7 4.11929 8.11929 3 9.5 3C10.8807 3 12 4.11929 12 5.5C12 6.88071 10.8807 8 9.5 8H8" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"></path> <path d="M4 14H5M15 17V17.5C15 19.433 16.567 21 18.5 21C20.433 21 22 19.433 22 17.5C22 15.567 20.433 14 18.5 14H9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"></path> <path d="M2 11H8M15 8V7.5C15 5.567 16.567 4 18.5 4C20.433 4 22 5.567 22 7.5C22 9.433 20.433 11 18.5 11H12.25" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"></path> </g></svg> <span id="wind"></span></p>
+            </section>
+        </section>
+        <section class="bottom-part">
+            <p id="random-qoute">Random Quote</p>
+            <p id="quote"></p>
+            <p id="author"></p>
+        </section>
+    </main>
+    <div class="spinner hidden"><svg id="loading" width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16 16L19 19M18 12H22M8 8L5 5M16 8L19 5M8 16L5 19M2 12H6M12 2V6M12 18V22" stroke="#75d6ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></div>
+</body>
+</html>
