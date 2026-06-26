@@ -57,7 +57,7 @@ https://dummyjson.com/quotes
 
 ### Desktop
 
-(Add desktop screenshot here)
+![Desktop Screenshot](/sreenshots/weather-dashboard.png)
 
 ### Mobile
 
